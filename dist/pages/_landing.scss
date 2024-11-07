@@ -1,0 +1,351 @@
+.banner {
+    padding-top: 10rem;
+   
+    .container {
+        background-image: url("../img/banner.webp");
+        height: 500px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        
+        
+    }
+
+    &_text {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        gap: 3rem;
+        margin-left: 5rem;
+        
+        a {
+            width: 15rem;
+        }
+    }
+
+    @include mediaQuery($break-md) {
+        padding-top: 18rem;
+        
+    }
+}
+
+.menu {
+    &_tabs {
+        ul {
+            display: flex;
+            gap: 8rem;
+            justify-content: center;
+
+            .tab_nav_link {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+
+                &.active {
+                    span {
+                        color: $clr-primary;
+                    }
+                }
+
+                img {
+                    width: 5rem;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+
+.menu {
+    &_tabs {
+        
+    }
+   
+
+    &_content {
+
+
+        &_item {
+            display: none;
+            
+           
+            justify-content: center;
+            img {
+                width: 30rem;
+                display: block;
+                margin: 0 auto;
+               
+                
+               
+               
+            }
+
+            &.active {
+               display: unset;
+                @include gridEven(1,1);
+                // .menu_item {
+              
+                
+                
+                // border: 2px solid whitesmoke;
+                // height: 62rem;
+                // padding: 1rem;
+                
+                    
+                //     &_text {
+                //         transition: 0.5s ease; 
+                //         font-size: 1.7rem;
+                //         font-weight: 100;
+                //         letter-spacing: 2px;
+                //         margin-top: -2rem;
+                //         padding: 4rem;
+                //         h3 {
+                //             font-size: 2.4rem;
+                //             color: $clr-primary;
+                //         }
+                //         p {
+                //             font-size: 1.5rem;
+                //         }
+
+                       
+                    
+                //     }
+
+                //     &_title {
+                        
+                //         transition: 0.1s ease;
+                //         margin-bottom: 6rem;
+
+                //     }
+                //     &_details {
+                      
+                //         p {
+                //             margin-bottom: 3rem;
+                          
+                //            opacity: 0;
+                         
+                //         }
+                //         .btn {
+                //             opacity: 0;
+                //             display: none;
+
+                           
+                //         }
+                        
+                //     }
+                    
+                   
+
+                //     &:hover {
+                //         img {
+                //             opacity: 40%;
+                //         }
+                //         .menu_item {
+                           
+                //            &_title {
+                //             margin-top: -10rem;
+                          
+                //            } 
+                //            &_details {
+                //             p {
+                              
+                //                 opacity: 100;
+                                
+                //                 margin-top: -4rem;
+                //                 margin-bottom: 2rem;
+                //                 transition: 0.5s ease; 
+                //             }
+                //             .btn {
+                //                 opacity: 100;
+                //                 display: block;
+                //                 width: 60%;
+                //             }
+
+                            
+                //            } 
+                           
+                //         }
+                       
+
+                       
+                       
+                //     }
+
+
+                // }
+                @include mediaQuery($break-md){
+                    @include gridEven(3,1)
+                }
+                
+
+              
+            }
+
+
+          
+          
+         
+
+        }
+
+       
+      
+
+    }
+  
+
+   
+   
+
+
+
+   
+}
+
+// @include mediaQuery($break-md){
+
+//     .menu_content{
+//             background: green;
+//         .menu_content_item {
+//             &.active{
+//                 display: unset;
+//                 display: flex;
+//                 flex-direction: row;
+//             }
+//             .menu_item {
+//                 background: red;
+//                 width: 30rem;
+//                 max-height: 40rem;
+
+//             }
+
+//         }
+//     }
+
+// }
+
+// @include mediaQuery ($break-md) {
+//     .menu {
+       
+//         &_content {
+//             display: flex;
+//             flex-direction: row;
+//             &_item {
+            
+              
+//                 img {
+//                     width: 20.5rem;
+//                 }
+//                 &.active {
+                
+                
+//                     display: unset;
+                   
+//                     gap: 20px; 
+//                     width: 40rem;
+//                     height: 41rem;
+                   
+//                     .menu_item {
+//                        width: 40rem;
+//                         &_text {
+                             
+//                             font-size: 1.6rem;
+//                             font-weight: 100;
+//                             letter-spacing: 2px;
+//                             margin-top: 1rem;
+//                             padding: 1rem;
+//                             h3 {
+//                                 font-size: 2.4rem;
+//                                 color: $clr-primary;
+//                             }
+//                             p {
+//                                 font-size: 1rem;
+//                             }
+    
+                           
+                        
+//                         }
+    
+//                         &_title {
+                            
+//                             transition: 0.1s ease;
+//                             margin-bottom: 4rem;
+    
+//                         }
+//                         &_details {
+                          
+//                             p {
+//                                 margin-bottom: 2rem;
+                              
+                         
+                             
+//                             }
+//                             .btn {
+//                                 font-size: 1rem;
+//                                 padding: 1rem 1.5rem;
+//                                 width: 60%;
+    
+                               
+//                             }
+                            
+//                         }
+
+//                         &:hover {
+//                             img {
+//                                 opacity: 40%;
+//                             }
+//                             .menu_item {
+                               
+//                                &_title {
+//                                 margin-top: -5rem;
+                              
+//                                } 
+//                                &_details {
+//                                 p {
+                                  
+//                                     opacity: 100;
+                                    
+//                                     margin-top: -2rem;
+//                                     margin-bottom: 1rem;
+                                   
+//                                 }
+//                                 .btn {
+//                                     opacity: 100;
+//                                     display: block;
+//                                     width: 50%;
+//                                 }
+    
+                                
+//                                } 
+                               
+//                             }
+                           
+    
+                           
+                           
+//                         }
+
+//                     }
+                   
+                   
+                   
+
+                   
+
+                    
+
+                   
+//                 }
+                
+              
+                
+//             }
+//         }
+//     }
+
+// }
+
