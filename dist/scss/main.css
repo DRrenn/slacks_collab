@@ -32,7 +32,7 @@ body {
 
 @font-face {
   font-family: myFont;
-  src: url(/img/SalesforceSans-Regular.ttf);
+  src: url(/dist/img/SalesforceSans-Regular.ttf);
 }
 .container {
   max-width: 127.4rem;
