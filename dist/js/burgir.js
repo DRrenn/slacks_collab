@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-  
   document.addEventListener('DOMContentLoaded', function () {
     const navParents = document.querySelectorAll('.footer_nav .title');
   
