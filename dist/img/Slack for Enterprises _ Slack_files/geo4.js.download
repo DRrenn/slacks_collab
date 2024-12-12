@@ -1,0 +1,17 @@
+(function(){
+  window['optimizely'] = window['optimizely'] || [];
+  window['optimizely'].push(['activateGeoDelayedExperiments', {
+    'location':{
+      'city': "CALAMBA",
+      'continent': "AS",
+      'country': "PH",
+      'region': "40",
+      'dma': ""
+    },
+    'ip':"49.144.170.212"
+  }]);
+})
+
+()
+
+;

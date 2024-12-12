@@ -1,5 +1,7 @@
-.footer {
 
+
+
+.footer {
     .container {
       display: flex;
       flex-direction: column-reverse;
@@ -32,6 +34,9 @@
           width: 80%;
       }
       }
+      .footer_nav {
+        display: none;
+      }
    
     
     }
@@ -40,6 +45,12 @@
         border-top: 1pX solid #cac8c8;
         border-bottom: 1pX solid #cac8c8;
         padding-bottom: 1.7rem;
+
+        @include mediaQuery($break-md) {
+          display: none;
+        }
+
+
       ul {   
         padding: 0;
   
