@@ -1,29 +1,28 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Select all .nav_parent elements (which are the clickable elements)
+  
     const navParents = document.querySelectorAll('.nav_parent');
   
-    // Add a click event to each nav_parent to toggle the visibility of .items
+
     navParents.forEach(navParent => {
       navParent.addEventListener('click', function() {
-        // Get the next sibling (the .items list) of the clicked .nav_parent
+      
         const items = this.nextElementSibling;
         
-        // Check if the items are currently visible or not
+
         const isActive = this.classList.contains('active');
         
-        // First, close all dropdowns by removing 'active' class and hiding all items
+       
         document.querySelectorAll('.nav_parent').forEach(parent => {
           parent.classList.remove('active');
           const siblingItems = parent.nextElementSibling;
           siblingItems.style.display = 'none';
           siblingItems.style.maxHeight = '0';
         });
-  
-        // If the items were not already visible (not active), open them
+
         if (!isActive) {
           this.classList.add('active');
           items.style.display = 'block';
-          items.style.maxHeight = '500px'; // Expand the items list
+          items.style.maxHeight = '500px';
         }
       });
     });
@@ -34,9 +33,164 @@ document.addEventListener("DOMContentLoaded", function() {
   
     navParents.forEach(navParent => {
       navParent.addEventListener('click', function () {
-        const parentLi = navParent.closest('li'); // Get the closest <li> (nav_parent's parent)
-        parentLi.classList.toggle('active'); // Toggle the 'active' class on the parent <li>
+        const parentLi = navParent.closest('li');
+        parentLi.classList.toggle('active'); 
       });
     });
   });
+
+
+  const mainHead = document.querySelector('.header');
+  window.addEventListener('scroll', function(){
+    if(this.scrollY > 150){
+      mainHead.classList.add('slidedown')
+    }else {
+      mainHead.classList.remove('slidedown')
+    }
+
+  }) 
+  const burgerHead = document.querySelector('.burger_content');
+  window.addEventListener('scroll', function(){
+    if(this.scrollY > 50){
+      burgerHead.classList.add('burgerdown')
+    }else {
+      burgerHead.classList.remove('burgerdown')
+    }
+
+  }) 
+
+
+
+function showPanel() {
+  const sidePanel = document.querySelector('.sidepanel');
+  const body = document.body;
+  if (!sidePanel.classList.contains('active')) {
+    sidePanel.classList.toggle('active');
+    body.style.overflowY = 'hidden';
+
+  }else {
+    sidePanel.classList.remove('active');
+    body.style.overflowY = '';
+  }
+
+
+}
+
+
+function itemPanel() {
+  const itemPan = document.querySelector('#itemPan');
+  const headNav = document.querySelector('.sidepanheader');
+  const conNav = document.querySelector('.content_nav');
+  const card_item = document.querySelector('.feature_card');
+  const card_item_btn = document.querySelector('.items_btn');
+
+  if (!itemPan.classList.contains('active')) {
+    itemPan.classList.toggle('active');
+    headNav.classList.toggle('active');
+    conNav.classList.toggle('active');
+    card_item.classList.toggle('active');
+    card_item_btn.classList.toggle('active');
+    
+  }else{
+    itemPan.classList.remove('active');
+    headNav.classList.remove('active');
+    conNav.classList.remove('active');
+    card_item.classList.remove('active');
+    card_item_btn.classList.remove('active');
+  }
+
+}
+
+function sideBarbtn() {
+  const navCont_Act = document.querySelector('.sidepanel');
+
+  if (!navCont_Act.classList.contains('cont_ac')) {
+    navCont_Act.classList.toggle('cont_ac');
+  }else{
+    navCont_Act.classList.remove('cont_ac');
+  }
+
+}
+
+function feature_On() {
+  const featureOn = document.querySelector('.items');
+  const navFT_isON = document.querySelector('.sidepanel');
+
+
+
+  if(!featureOn.classList.contains('feature_isON')) {
+    featureOn.classList.toggle('feature_isON');
+    navFT_isON.classList.toggle('feature_isON');
+  }else{
+    featureOn.classList.remove('feature_isON');
+    navFT_isON.classList.remove('feature_isON');
+  }
+}
+
+
+
+function solution_On() {
+  const sol_ON = document.querySelector('.sidepanel');
+  sol_ON.classList.toggle('sol_ON');  
+}
+
+function resource_On() {
+  const res_ON = document.querySelector('.sidepanel');
+  res_ON.classList.toggle('res_ON');  
+}
+
+
+
+function drp_act() {
+  const drp_ACT = document.querySelector('.header_dropdown_wrapper');
+  drp_ACT.classList.toggle('active');
+}
+
+
+
+
+
+
+// Function to handle dropdown toggle and adding/removing 'active' class
+function toggleDropdown(activeId) {
+  // Get all the dropdown contents
+  const dropdowns = document.querySelectorAll('.drop_content');
+
+  // Check if the clicked dropdown is already open
+  const activeDropdown = document.getElementById(activeId);
   
+  // If the clicked dropdown is already open, close it
+  if (activeDropdown.style.display === 'block') {
+    activeDropdown.style.display = 'none';
+  } else {
+    // Otherwise, close all dropdowns and open the clicked one
+    dropdowns.forEach(dropdown => {
+      dropdown.style.display = 'none';  // Close all dropdowns
+    });
+    activeDropdown.style.display = 'block';  // Open the clicked dropdown
+  }
+
+  // Get the dropdown container and toggle the 'active' class
+  const drpWrapper = document.querySelector('.header_dropdown_wrapper');
+  // Check if any dropdown is open
+  const anyDropdownOpen = Array.from(dropdowns).some(d => d.style.display === 'block');
+  if (anyDropdownOpen) {
+    drpWrapper.classList.add('active');  // Add 'active' if any dropdown is open
+  } else {
+    drpWrapper.classList.remove('active');  // Remove 'active' if no dropdown is open
+  }
+}
+
+// Attach event listeners for each button to toggle dropdowns
+document.querySelector('.feat').addEventListener('click', () => toggleDropdown('drp_feat'));
+document.querySelector('.sol').addEventListener('click', () => toggleDropdown('drp_sol'));
+document.querySelector('.res').addEventListener('click', () => toggleDropdown('drp_reso'));
+
+
+function consent_check() {
+  const consent = document.querySelector('.consent_btn');
+
+  consent.classList.toggle('checked');
+
+}
+
