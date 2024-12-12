@@ -26,3 +26,23 @@
   src:url(/dist/img/SalesforceSans-Regular.ttf);
   
 }
+
+@mixin txt_line {
+  position: relative;  // To position the pseudo-element correctly
+
+  &::after {
+    content: '';  // No text, just an underline effect
+    position: absolute;
+    left: 0;
+    bottom: 0;  // Position it at the bottom of the text
+    width: 0;  // Start with width of 0 (invisible)
+    height: 2px;  // Set height for the underline
+    background-color: #1264a3;  // Color of the underline
+    transition: width 0.3s ease;  // Animate the width change
+  }
+
+  &:hover::after {
+    width: 100%;  // On hover, make the width 100% to reveal the underline
+  }
+}
+

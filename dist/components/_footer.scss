@@ -1,12 +1,7 @@
-footer {
-    position: absolute; 
-    bottom: 0;
-    width: 100%; 
-  
-}
+
+
 
 .footer {
-
     .container {
       display: flex;
       flex-direction: column-reverse;
@@ -39,6 +34,9 @@ footer {
           width: 80%;
       }
       }
+      .footer_nav {
+        display: none;
+      }
    
     
     }
@@ -47,6 +45,12 @@ footer {
         border-top: 1pX solid #cac8c8;
         border-bottom: 1pX solid #cac8c8;
         padding-bottom: 1.7rem;
+
+        @include mediaQuery($break-md) {
+          display: none;
+        }
+
+
       ul {   
         padding: 0;
   
